@@ -37,7 +37,7 @@ class SyncBailHook extends Hook{
                 }
             },null)
         } catch (error) {
-            fn(error
+            fn(error)
         }
     }
 }
