@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug:synchook": "node --inspect --inspect-brk ./tapable-demo/sync/SyncHook.js",
+    "debug:classTest": "node --inspect --inspect-brk ./tapable-demo/ClassTest.js"
   },
   "author": "",
+  "devDependencies": {
+    "tapable": "^1.1.3"
+  },
   "license": "ISC"
 }
