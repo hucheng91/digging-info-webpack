@@ -3,7 +3,8 @@
  * @Date: 2019-07-06 15:35:17
  * @Description: here is des
  */
-const { SyncBailHook } = require('tapable');
+// const { SyncBailHook } = require('tapable');
+const {SyncBailHook} = require('../my-tapable')
 
 const syncBailHook = new SyncBailHook([ 'nam1', 'nam2']);
 
@@ -17,4 +18,6 @@ syncBailHook.tap('2', (name) => {
     
 });
 
-syncBailHook.call('Hucheng');
+syncBailHook.call('Hucheng',function(error,result){
+    console.log(result)
+});

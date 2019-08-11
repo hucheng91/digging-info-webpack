@@ -8,7 +8,7 @@
 // 	SyncHook
 // } = require("tapable");
 
-const {SyncHook} = require("../my-tapable/SyncHook")
+const {SyncHook} = require("../my-tapable")
 
 console.log(SyncHook)
 

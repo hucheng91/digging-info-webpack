@@ -19,7 +19,7 @@ class SyncHook extends Hook{
     call(name,fn){
         try {
             this.taps.map(tap => tap.fn(name))
-            fn(name)
+            fn(null,name)
         } catch (error) {
             fn(error)
         }
@@ -27,9 +27,24 @@ class SyncHook extends Hook{
     }
 }
 class SyncBailHook extends Hook{
+    call(name,fn){
+        try {
+            this.taps.reduce((result,tap) => {
+                if(result != undefined){
+                    fn(null,result)
+                }else{
+                    return  tap.fn(name)
+                }
+            },null)
+        } catch (error) {
+            fn(error
+        }
+    }
+}
+class SyncLoopHook extends Hook{
 
 }
 
 module.exports = {
-    SyncHook
+    SyncHook,SyncBailHook,SyncLoopHook
 }
