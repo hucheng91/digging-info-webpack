@@ -4,7 +4,7 @@
  * @Description: here is des
  */
 const acron = require('acorn')
-var traverse = require("ast-traverse");
+const traverse = require("ast-traverse");
 const escodegen = require('escodegen')
 const code = `const test = 123`
 let ast = acron.parse(code)
