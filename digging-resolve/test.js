@@ -9,6 +9,6 @@ const CWD = process.cwd();
 resolve(__dirname, './1.js', (error, result) => {
     console.log(result)
 })
-resolve(CWD, 'enhanced-resolve', (error, result) => {
-    console.log(result)
-})
+// resolve(CWD, 'enhanced-resolve', (error, result) => {
+//     console.log(result)
+// })
