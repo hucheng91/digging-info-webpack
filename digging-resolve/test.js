@@ -3,7 +3,8 @@
  * @Date: 2019-08-25 18:02:38
  * @Description: here is des
  */
-const resolve = require("enhanced-resolve");
+//const resolve = require("enhanced-resolve");
+const { resolve } = require("./ResolveFactory")
 const CWD = process.cwd();
 
 resolve(__dirname, './1.js', (error, result) => {

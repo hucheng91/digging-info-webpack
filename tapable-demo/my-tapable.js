@@ -34,7 +34,8 @@ class SyncWaterfallHook extends Hook {
         } catch (error) {
             fn(error)
         }
-    }
+    },
+    call
 }
 class SyncBailHook extends Hook {
     call(name, fn) {
