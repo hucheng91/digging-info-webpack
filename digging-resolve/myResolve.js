@@ -3,7 +3,7 @@
  * @Date: 2019-08-28 09:24:36
  * @Description: here is des
  */
-const { SyncHook, SyncBailHook, AsyncSeriesBailHook } = require("tapable");
+const { SyncHook, SyncBailHook, AsyncSeriesBailHook, AsyncSeriesWaterfallHook } = require("tapable");
 const memoryFsJoin = require("memory-fs/lib/join");
 const memoizedJoin = new Map();
 const REGEXP_NOT_MODULE = /^\.$|^\.[\\\/]|^\.\.$|^\.\.[\/\\]|^\/|^[A-Z]:[\\\/]/i;
@@ -19,9 +19,8 @@ module.exports = class Resolve {
             noResolve: withName("noResolve", new SyncHook(["request"])),
             resolve: withName("resolve", new AsyncSeriesBailHook(["request"])),
             'parsed-resolve': withName('parsed-resolve', new AsyncSeriesBailHook(['request'])),
-            'described-resolve': withName('parsed-resolve', new AsyncSeriesBailHook(['request'])),
-            'after-described-resolve': withName('after-described-resolve', new AsyncSeriesBailHook(['request'])),
-            'raw-module': withName('raw-module', new AsyncSeriesBailHook(['request']))
+            'raw-module': withName('raw-module', new AsyncSeriesBailHook(['request'])),
+            result: withName('result', new AsyncSeriesWaterfallHook(["request"]))
 
         }
     }

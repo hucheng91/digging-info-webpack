@@ -6,6 +6,8 @@
 const Resolver = require("./MyResolve")
 const ParsePlugin = require("./ParsePlugin")
 const ModuleKindPlugin = require("./ModuleKindPlugin")
+const JoinRequestPlugin = require("./JoinRequestPlugin")
+const ResultPlugin = require("./ResultPlugin")
 const createResovler = function (options) {
     let modules = options.modules || ["node_modules"]
     const descriptionFiles = options.descriptionFiles || ["package.json"]
@@ -17,10 +19,11 @@ const createResovler = function (options) {
     let resolver = new Resolver()
     plugins.push(new ParsePlugin("resolve", "parsed-resolve"))
     plugins.push(new ModuleKindPlugin("parsed-resolve", "raw-module"))
-
+    plugins.push(new JoinRequestPlugin("raw-module", "result"))
     plugins.forEach(plugin => {
         plugin.apply(resolver);
     });
+
 
     return resolver;
 }

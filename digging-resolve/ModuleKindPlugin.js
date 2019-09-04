@@ -13,8 +13,8 @@ module.exports = class ModuleKindPlugin {
 
 	apply(resolver) {
 		const target = resolver.ensureHook(this.target);
-		resolver.getHook(this.source).tapAsync("ModuleKindPlugin", (request, resolveContext, callback) => {
-			if (!request.module) return callback();
+		resolver.getHook(this.source).tapAsync("ModuleKindPlugin", (request, callback) => {
+			//if (!request.module) return callback(null, request);
 			const obj = Object.assign({}, request);
 			delete obj.module;
 			resolver.doResolve(target, obj, (err, result) => {
