@@ -35,7 +35,11 @@ module.exports = class Resolve {
             path,
             request
         }
-        this.doResolve(this.hooks.resolve, obj, callback)
+        this.doResolve(this.hooks.resolve, obj, (err, result) => {
+            if (!err && result) {
+                return callback(null, result.path === false ? false : result.path + (result.query || ""), result);
+            }
+        })
     }
     doResolve(hook, request, callback) {
         return hook.callAsync(request, (err, result) => {
