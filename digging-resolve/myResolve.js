@@ -18,8 +18,10 @@ module.exports = class Resolve {
         this.hooks = {
             noResolve: withName("noResolve", new SyncHook(["request"])),
             resolve: withName("resolve", new AsyncSeriesBailHook(["request"])),
+            'des-module': withName('des-module', new AsyncSeriesBailHook(['request'])),
             'parsed-resolve': withName('parsed-resolve', new AsyncSeriesBailHook(['request'])),
             'raw-module': withName('raw-module', new AsyncSeriesBailHook(['request'])),
+            'kind-module': withName('kind-module', new AsyncSeriesBailHook(['request'])),
             result: withName('result', new AsyncSeriesWaterfallHook(["request"]))
 
         }
