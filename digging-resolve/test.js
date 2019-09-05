@@ -7,9 +7,9 @@
 const { resolve } = require("./ResolveFactory")
 const CWD = process.cwd();
 
-resolve(__dirname, './1.js', (error, result) => {
-    console.log(result)
-})
-// resolve(CWD, 'enhanced-resolve', (error, result) => {
+// resolve(__dirname, './1.js', (error, result) => {
 //     console.log(result)
 // })
+resolve(CWD, 'enhanced-resolve', (error, result) => {
+    console.log(result)
+})

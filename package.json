@@ -22,6 +22,7 @@
     "alter": "^0.2.0",
     "ast-traverse": "^0.1.1",
     "escodegen": "^1.12.0",
+    "fs-extra": "^8.1.0",
     "memory-fs": "^0.4.1",
     "tapable": "^1.1.3",
     "webpack-bundle-analyzer": "^3.4.1",
