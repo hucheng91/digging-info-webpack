@@ -18,8 +18,10 @@ module.exports = class ModuleKindPlugin {
 			if (!request.module) {
 				return callback(null, request);
 			}
+			// TODO: 粗略处理，这个在Window上路径会有些问题
 			let array = request.path.split("/")
-			request.path = array.splice(array.length - 1, 0, this.modules)
+			array.splice(array.length - 1, 0, this.modules)
+			request.path = array.join("/")
 			const obj = Object.assign({}, request);
 
 			resolver.doResolve(target, obj, (err, result) => {
