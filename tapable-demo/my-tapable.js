@@ -13,6 +13,12 @@ class Hook {
     tap(name, fn) {
         this.taps.push({ name, fn })
     }
+    call(name, fn) {
+
+    }
+    callAsync(name, fn) {
+
+    }
 }
 class SyncHook extends Hook {
 
@@ -70,6 +76,11 @@ class SyncLoopHook extends Hook {
 
 }
 
+class AsyncHook extends Hook {
+    callAsync(name, fn) {
+        
+    }
+}
 module.exports = {
     SyncHook, SyncWaterfallHook, SyncBailHook, SyncLoopHook
 }
