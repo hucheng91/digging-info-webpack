@@ -4,22 +4,30 @@
  * @Description: AsyncSeriesHook Demo
  */
 
-const {
-	AsyncSeriesHook
- } = require("tapable");
+// const {
+// 	AsyncSeriesHook
+//  } = require("tapable");
 
+ const {
+	AsyncSeriesHook
+ } = require("../my-tapable");
 
  const hook = new AsyncSeriesHook(['name']);
 
  // callback(error)
  hook.tapAsync('1',(name,callback) => {
-     console.log('Hello',name);
-     callback()
+     setTimeout(() => {
+        console.log('Hello',name);
+        callback()
+     },1000)
+    
  })
  hook.tapAsync('2',(name,callback) => {
-    console.log('Wellocome',name);
-    console.log(callback.toString())
-    callback(null)
+    setTimeout( () => {
+        console.log('Wellocome',name);
+        callback(null)
+    },2000)
+    
  })
 
 hook.tapAsync('3',(name,callback) => {
@@ -27,7 +35,6 @@ hook.tapAsync('3',(name,callback) => {
    // console.log(callback.toString())
     callback()
 })
-
 
 hook.callAsync('hucheng',function(){
     console.log('finish',...arguments)
