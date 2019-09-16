@@ -61,7 +61,4 @@ vueInstance.hooks.beforeCreate.tap('2', (name) => {
     console.log('Wellocome', name);
 })
 vueInstance.init()
-准备初始化MyVue实例了
-hello MyVue
-Wellocome MyVue
-干点其他事, 唤起hook created 
+
