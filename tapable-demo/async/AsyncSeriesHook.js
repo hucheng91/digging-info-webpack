@@ -15,14 +15,14 @@
  const hook = new AsyncSeriesHook(['name']);
 
  // callback(error)
- hook.tapAsync('1',(name,callback) => {
+ hook.tap('1',(name,callback) => {
      setTimeout(() => {
         console.log('Hello',name);
         callback()
      },1000)
     
  })
- hook.tapAsync('2',(name,callback) => {
+ hook.tap('2',(name,callback) => {
     setTimeout( () => {
         console.log('Wellocome',name);
         callback(null)
@@ -30,7 +30,7 @@
     
  })
 
-hook.tapAsync('3',(name,callback) => {
+hook.tap('3',(name,callback) => {
     console.log('Happy',name);
    // console.log(callback.toString())
     callback()
