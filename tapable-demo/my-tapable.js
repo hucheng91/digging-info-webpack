@@ -13,6 +13,9 @@ class Hook {
     tap(name, fn) {
         this.taps.push({ name, fn })
     }
+    tapAsync(name,fn){
+
+    }
     call(name, fn) {
 
     }
@@ -81,14 +84,13 @@ class SyncLoopHook extends Hook {
 class AsyncSeriesHook extends Hook {
 
     // 仔细看代码的实现，这就是 JavaScript 的魅力所在
-    tapAsync(name, fn) {
-        
+    callAsync(name, fn) {
         let i = 0        
         let nextFn = (error) => {
             if(error){return fn(error)}
             i++
             if(i >= this.taps.length){return fn()}
-            this.taps[i].apply(this,[name,nextFn])
+            this.taps[i].fn.apply(this,[name,nextFn])
            // 注意看这里，上面的nexFn，就放到了 调用的地方了  
           /**
            * hook.tapAsync('1',(name,callback) => {
@@ -100,12 +102,30 @@ class AsyncSeriesHook extends Hook {
             })
             */
         }
-        
-        this.taps[0].apply(this,[name,nextFn])
+        this.taps[0].fn.apply(this,[name,nextFn])
     
     }
     callPromise(name,fn){
         
+    }
+} 
+class AsyncParallelHook extends Hook{
+    callAsync(name, fn) {
+       let remaining = this.taps.length;
+      const callbackFn =  (error) =>{
+            if(remaining <0) return;
+            if(error){
+                remaining = -1;
+                return fn(error);
+            }
+            remaining--;
+            if(remaining == 0){
+                return fn()
+            }
+       }
+       for(var i = 0; i < this.taps.length; i++) {
+        this.taps[i].fn.apply(this, [name,callbackFn]);
+       } 
     }
 }
 module.exports = {
@@ -113,5 +133,6 @@ module.exports = {
     SyncWaterfallHook,
     SyncBailHook,
     SyncLoopHook,
-    AsyncSeriesHook
+    AsyncSeriesHook,
+    AsyncParallelHook
 }
