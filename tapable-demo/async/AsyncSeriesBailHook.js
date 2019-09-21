@@ -12,18 +12,22 @@ const {
  const hook = new AsyncSeriesBailHook(['name']);
 
  hook.tapAsync('1',(name,callback) => {
-     console.log('Hello',name);
-    // console.log(callback.toString())
-     callback(null,123)
+    setTimeout(() => {
+        console.log('Hello',name);
+        callback()
+     },1000)
  })
  hook.tapAsync('2',(name,callback) => {
-    console.log('Wellocome',name);
-  //  console.log(callback.toString())
-    callback('12344')
+    setTimeout( () => {
+        console.log('Wellocome',name);
+        callback()
+    },2000)
  })
 
-hook.tapAsync('3',(name) => {
+ hook.tap('3',(name,callback) => {
     console.log('Happy',name);
+   // console.log(callback.toString())
+    callback()
 })
 
 
