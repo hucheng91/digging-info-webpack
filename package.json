@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug:synchook": "node --inspect --inspect-brk ./tapable-demo/sync/SyncHook.js",
+    "debug:asyncParallelHook": "node --inspect --inspect-brk ./tapable-demo/async/AsyncParallelHook.js",
     "debug:module-loader": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js --config ./module-loader/webpack.config.js  --env.mode=production",
     "debug:resolve": "node --inspect --inspect-brk ./digging-resolve/test.js",
     "debug:ast": "node --inspect --inspect-brk ./ast-parser/ast.js ",
