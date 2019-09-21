@@ -87,6 +87,9 @@ Webpack 最开始是加载 我们的entry 入口文件，然后通过 acorn( bab
 
 ![image.png-296.8kB][8]
 
+本文原创发布于 同名微信公众号 「chromedev」，给个赞呗。 
+
+![](http://static.zybuluo.com/hucheng91/99oeoytq6nxe6j89u1jsrfvk/0.jpeg)
 
   [1]: http://static.zybuluo.com/hucheng91/izo4ix5nm7m7ckengpdxpqn0/webpack-browser.png
   [2]: http://static.zybuluo.com/hucheng91/8xlfd1nnlvtlkomicr60umcx/com.png

@@ -85,5 +85,8 @@ JavaScript 是一门编译型语言，只不过 编译时间非常短，给人�
 ```
 如果是解释型语言，代码一行行的读，这段代码是要报错的，但没有报错，我门说这个是函数提升，实际上就是 浏览器的编译过程，
 
+本文原创发布于 同名微信公众号 「chromedev」，给个赞呗。 
+![](http://static.zybuluo.com/hucheng91/99oeoytq6nxe6j89u1jsrfvk/0.jpeg)
+
   [1]: https://user-gold-cdn.xitu.io/2019/8/25/16cc913078a05c3b?w=707&h=184&f=jpeg&s=24348
   [2]: https://user-gold-cdn.xitu.io/2019/8/25/16cc913078e97498?w=750&h=766&f=png&s=76269

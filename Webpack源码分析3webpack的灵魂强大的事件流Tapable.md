@@ -11,7 +11,7 @@
 
 # Webpack源码分析(3)--之 Webpack的灵魂强大的事件流Tapable(I)--同步 hook
 
-本来这篇是要说 resolve 实现的，但我发现讲 resolve 之前不把 Tapable 讲清楚，是搞不明白，这篇是最重要的，其他可以跳过，这个希望正在看的读者，仔细看看，搞明白了，下次面试，人家问你什么事件流，发布订阅，观察者模式啊，你把这篇吹一波，肯定加分不少(额，牛皮还是要吹的)
+本来这篇是要说 resolve 实现的，但我发现讲 resolve 之前不把 Tapable 讲清楚，是搞不明白，这篇是最重要的，其他可以跳过，这个希望正在看的读者，仔细看看，搞明白了
 
 ## 生命周期的概念
 
@@ -196,5 +196,8 @@ class SyncLoopHook extends Hook {
 同步 hook 写完，理解学会这几种用法，在平常工作中可以大大的减少代码耦合，值得深入理解学习
 下篇我们讲下异步Hook
 
+本文原创发布于 同名微信公众号 「chromedev」，给个赞呗。 
+
+![](http://static.zybuluo.com/hucheng91/99oeoytq6nxe6j89u1jsrfvk/0.jpeg)
 
 [1]: http://static.zybuluo.com/hucheng91/9rlar0z7949fdtlco3znqj09/tapable.png
