@@ -9,7 +9,7 @@
 
  const {
 	AsyncParallelHook
- } = require("../my-tapable")
+ } = require("../my-tapable/index")
 
 
  const hook = new AsyncParallelHook(['name']);
