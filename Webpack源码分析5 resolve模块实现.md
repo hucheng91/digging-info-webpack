@@ -17,7 +17,7 @@ const a = require('./test')
 const b = require('b')
 const c = require('@/util')
 import data ‘./a.json’
-console.log(454)
+console.log(454
 ``` 
 
 resove 模块的功能就是根据标记的路径返回资源的绝对路径，然后交给其他模块处理，webpack 团队 独立出来一个 lib 来负责解析，npm 包的名字叫 `enhanced-resolve`，
