@@ -5,6 +5,7 @@
  */
 
 import es6Module from './es6'
+import './style.css'
 const commonjsModule = require('./commonjs')
 
 es6Module()

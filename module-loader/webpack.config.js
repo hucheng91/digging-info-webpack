@@ -16,21 +16,10 @@ module.exports = ({ mode = "production", presets = [] }) => {
             entry: {
                 main: "./module-loader/src/index.js",
             },
-            mode: mode,
+            mode: 'development',
             module: {
                 rules: [
-                    // { test: /\.css$/, use: 'css-loader' },
-                    // {
-                    //     test: /\.jpeg$/,
-                    //     use: [
-                    //         {
-                    //             loader: "url-loader",
-                    //             options: {
-                    //                 limit: 5000
-                    //             }
-                    //         }
-                    //     ]
-                    // }
+                    { test: /\.css$/, use: 'css-loader' }
                 ]
             },
         },
